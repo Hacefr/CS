@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cursor Survival</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==================== 1. MAIN MENU ==================== -->
+  <div id="main-menu" class="screen-panel active">
+    <div class="menu-box">
+      <h1 class="game-title">CURSOR SURVIVAL</h1>
+      <div class="menu-buttons">
+        <button id="btn-start" class="menu-btn">START</button>
+        <button id="btn-settings" class="menu-btn">SETTINGS</button>
+        <button id="btn-achievements" class="menu-btn">ACHIEVEMENTS</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 2. SETTINGS PANEL ==================== -->
+  <div id="settings-panel" class="modal-panel hidden">
+    <div class="modal-box">
+      <h2>SETTINGS</h2>
+      <div class="setting-item">
+        <span>Sound Effects:</span>
+        <button id="toggle-sfx" class="toggle-btn">ON</button>
+      </div>
+      <div class="setting-item">
+        <span>Reset Progress:</span>
+        <button id="btn-reset-data" class="danger-btn">RESET SAVE</button>
+      </div>
+      <button id="btn-close-settings" class="menu-btn modal-close">BACK</button>
+    </div>
+  </div>
+
+  <!-- ==================== 3. ACHIEVEMENTS PANEL ==================== -->
+  <div id="achievements-panel" class="modal-panel hidden">
+    <div class="modal-box">
+      <h2>ACHIEVEMENTS</h2>
+      <div class="achievements-list">
+        <div class="achievement-card locked">
+          <div class="achievement-title">First Steps</div>
+          <div class="achievement-desc">Survive your first level.</div>
+        </div>
+        <div class="achievement-card locked">
+          <div class="achievement-title">Snail Wrangler</div>
+          <div class="achievement-desc">Survive 60 seconds with the Snail active.</div>
+        </div>
+      </div>
+      <button id="btn-close-achievements" class="menu-btn modal-close">BACK</button>
+    </div>
+  </div>
+
+  <!-- ==================== 4. PILLARS DRAFTING SCREEN ==================== -->
+  <div id="pillars-panel" class="screen-panel hidden">
+    <h2 id="pillars-title" class="fade-text">CHOSE...</h2>
+    <div class="pillars-container">
+      <!-- Pillar 1 -->
+      <div class="pillar" data-pillar="0">
+        <div class="pillar-content">
+          <div class="pillar-type">ENEMY / CURSE</div>
+          <div class="pillar-name">Snail</div>
+          <div class="pillar-desc">Slowly tracks cursor continuously.</div>
+        </div>
+      </div>
+      <!-- Pillar 2 -->
+      <div class="pillar" data-pillar="1">
+        <div class="pillar-content">
+          <div class="pillar-type">UPGRADE</div>
+          <div class="pillar-name">Grip Boost</div>
+          <div class="pillar-desc">Reduces cursor sliding inertia.</div>
+        </div>
+      </div>
+      <!-- Pillar 3 -->
+      <div class="pillar" data-pillar="2">
+        <div class="pillar-content">
+          <div class="pillar-type">ENEMY / CURSE</div>
+          <div class="pillar-name">Phantom</div>
+          <div class="pillar-desc">Follows your exact recent movement path.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 5. ACTIVE GAMEPLAY SCREEN ==================== -->
+  <div id="gameplay-panel" class="screen-panel hidden">
+    
+    <!-- TOP BAR: Upgrades -->
+    <div id="top-upgrades-bar">
+      <span class="bar-label">UPGRADES:</span>
+      <div id="upgrades-list" class="horizontal-list">
+        <div class="upgrade-item empty">None</div>
+      </div>
+      <div id="level-timer">TIME: <span id="timer-count">00:30</span></div>
+    </div>
+
+    <!-- MAIN GAME LAYOUT (3 Columns) -->
+    <div class="game-layout">
+      
+      <!-- LEFT SIDEBAR: Curses -->
+      <div id="left-curses-sidebar" class="sidebar">
+        <h3>ACTIVE CURSES</h3>
+        <div id="curses-list" class="vertical-list">
+          <div class="curse-item empty">No Curses Active</div>
+        </div>
+      </div>
+
+      <!-- CENTER: Main Game Box -->
+      <div id="center-game-wrapper">
+        <div id="game-arena">
+          <canvas id="game-canvas"></canvas>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDEBAR: Enemies -->
+      <div id="right-enemies-sidebar" class="sidebar">
+        <h3>ACTIVE ENEMIES</h3>
+        <div id="enemies-list" class="vertical-list">
+          <div class="enemy-item empty">No Active Enemies</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== 6. INTERMISSION OVERLAY ==================== -->
+  <div id="intermission-panel" class="modal-panel hidden">
+    <div class="modal-box">
+      <h2>INTERMISSION</h2>
+      <p>Safe State Active. You may switch browser tabs or take a break.</p>
+      <button id="btn-continue" class="menu-btn">CONTINUE RUN</button>
+    </div>
+  </div>
+
+  <!-- JavaScript Modules -->
+  <script src="mechanics/saveSystem.js"></script>
+  <script src="mechanics/cursorTracker.js"></script>
+  <script src="mechanics/pillarDraft.js"></script>
+  <script src="mechanics/curses.js"></script>
+  <script src="mechanics/upgrades.js"></script>
+  <script src="enemies/snail.js"></script>
+  <script src="enemies/phantom.js"></script>
+  <script src="enemies/infection.js"></script>
+  <script src="gameEngine.js"></script>
+
+</body>
+</html>
