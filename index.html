@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Warning - Cursor Survival</title>
+  <style>
+    /* Reset and base page layout */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #0b0b0d;
+      color: #e0e0e0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+      user-select: none;
+    }
+
+    /* Centered Warning Box */
+    .warning-card {
+      background-color: #141419;
+      border: 2px solid #8b0000;
+      box-shadow: 0 0 25px rgba(139, 0, 0, 0.4);
+      border-radius: 8px;
+      padding: 40px;
+      max-width: 550px;
+      width: 90%;
+      text-align: center;
+    }
+
+    .warning-icon {
+      font-size: 3rem;
+      color: #ff3333;
+      margin-bottom: 15px;
+      text-shadow: 0 0 10px rgba(255, 51, 51, 0.5);
+    }
+
+    .warning-title {
+      font-size: 2rem;
+      letter-spacing: 2px;
+      color: #ff3333;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .warning-text {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #cccccc;
+      margin-bottom: 30px;
+    }
+
+    .highlight {
+      color: #ff4d4d;
+      font-weight: bold;
+    }
+
+    /* Confirmation Button */
+    .btn-understand {
+      background-color: #8b0000;
+      color: #ffffff;
+      border: 1px solid #ff3333;
+      padding: 14px 28px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+      letter-spacing: 1px;
+      transition: all 0.2s ease-in-out;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-understand:hover {
+      background-color: #b30000;
+      box-shadow: 0 0 15px rgba(255, 51, 51, 0.7);
+      transform: translateY(-2px);
+    }
+
+    .btn-understand:active {
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="warning-card">
+    <div class="warning-icon">⚠️</div>
+    <h1 class="warning-title">Warning!</h1>
+    
+    <p class="warning-text">
+      This game uses <span class="highlight">your cursor</span> as the main player.<br><br>
+      Navigating or moving your cursor anywhere outside this site could cause you to <span class="highlight">die!</span>
+    </p>
+
+    <!-- Clicking redirects to game.html -->
+    <a href="game.html" class="btn-understand">Ok, I understand</a>
+  </div>
+
+</body>
+</html>
