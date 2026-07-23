@@ -1,0 +1,242 @@
+/* Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0b0b0d;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* Visibility Utility Classes */
+.hidden {
+  display: none !important;
+}
+
+.screen-panel {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Modal Overlay Styles */
+.modal-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal-box {
+  background-color: #141419;
+  border: 2px solid #8b0000;
+  border-radius: 4px;
+  padding: 30px;
+  width: 400px;
+  text-align: center;
+}
+
+.modal-box h2 {
+  color: #ff3333;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+/* Buttons */
+.menu-btn, .danger-btn, .toggle-btn {
+  background-color: #1a1a22;
+  color: #ffffff;
+  border: 1px solid #8b0000;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  margin: 8px 0;
+  transition: background-color 0.15s;
+  width: 100%;
+}
+
+.menu-btn:hover {
+  background-color: #8b0000;
+}
+
+.danger-btn {
+  background-color: #4a0000;
+  border-color: #ff3333;
+}
+
+.danger-btn:hover {
+  background-color: #8b0000;
+}
+
+/* 1. Main Menu Screen */
+#main-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-box {
+  text-align: center;
+  width: 350px;
+}
+
+.game-title {
+  font-size: 2.2rem;
+  color: #ff3333;
+  margin-bottom: 40px;
+  letter-spacing: 3px;
+}
+
+/* 4. Pillars Screen */
+#pillars-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#pillars-title {
+  font-size: 2.5rem;
+  color: #ff3333;
+  letter-spacing: 4px;
+  margin-bottom: 40px;
+}
+
+.pillars-container {
+  display: flex;
+  gap: 30px;
+}
+
+.pillar {
+  width: 200px;
+  height: 320px;
+  background-color: #141419;
+  border: 2px solid #8b0000;
+  border-radius: 4px;
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.15s, border-color 0.15s;
+}
+
+.pillar:hover {
+  transform: translateY(-5px);
+  border-color: #ff3333;
+}
+
+.pillar-type {
+  font-size: 0.8rem;
+  color: #ff3333;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.pillar-name {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.pillar-desc {
+  font-size: 0.9rem;
+  color: #aaaaaa;
+  line-height: 1.4;
+}
+
+/* 5. Gameplay Layout (Top Bar + 3 Columns) */
+#gameplay-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Top Upgrades Bar */
+#top-upgrades-bar {
+  height: 60px;
+  background-color: #141419;
+  border-bottom: 2px solid #8b0000;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  justify-content: space-between;
+}
+
+.horizontal-list {
+  display: flex;
+  gap: 10px;
+  flex-grow: 1;
+  margin-left: 20px;
+}
+
+#level-timer {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ff3333;
+}
+
+/* 3-Column Game Area */
+.game-layout {
+  display: flex;
+  flex: 1;
+  height: calc(100vh - 60px);
+}
+
+.sidebar {
+  width: 220px;
+  background-color: #141419;
+  border-right: 2px solid #8b0000;
+  padding: 15px;
+}
+
+#right-enemies-sidebar {
+  border-right: none;
+  border-left: 2px solid #8b0000;
+}
+
+.sidebar h3 {
+  font-size: 1rem;
+  color: #ff3333;
+  margin-bottom: 15px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+#center-game-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0b0b0d;
+}
+
+/* The Main Game Play Box */
+#game-arena {
+  width: 90%;
+  height: 90%;
+  border: 4px solid #ffffff;
+  position: relative;
+  background-color: #050507;
+}
+
+#game-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
